@@ -1,5 +1,35 @@
-body {
+#root > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.page-footer{
+  padding-top: 0 !important;
+}
+
+.row{
+  margin: 20px 0;
+}
+
+.btn{
+  min-width: 160px;
+  margin-bottom: 10px;
+}
+
+p{
+  padding: 0 10px;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+}
+
+p.editable{
+  padding: 10px;
+}
+
+nav{
+  margin-bottom: 20px;
 }

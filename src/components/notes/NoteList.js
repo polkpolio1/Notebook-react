@@ -24,7 +24,7 @@ class NoteList extends React.Component {
       alert("Note must be more then 5 symbols!")
       return
     }
-    if(text.length >= 300){
+    if(text.length >= 800){
       alert("Note must be less then 300 symbols!")
       return
     }

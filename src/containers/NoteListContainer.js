@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { deleteNote, editNote } from '../actions/noteActions'
 
-import NoteList from '../components/NoteList'
+import NoteList from '../components/notes/NoteList'
 
 const mapStateToProps = (state) => {
   return {
