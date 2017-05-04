@@ -12,20 +12,30 @@ class EditForm extends React.Component{
     sel.addRange(range)
     el.focus()
   }
-  render(){
-    const {text, saveEdit, cancelEdit} = this.props
 
+  onSaveEdit(){
+    this.props.saveEdit(this.refs.div.innerText)
+  }
+
+  onKeyPress(e){
+    if(e.which === 13){
+      this.onSaveEdit()
+    }
+  }
+  
+  render(){
+    const {text, cancelEdit} = this.props
     return (
       <li>
-        <div className="row">
+        <form className="row"  autoComplete="off" onSubmit={this.onSaveEdit}>
           <div className="col s12 m9">
-            <p className="editable" autoFocus contentEditable={true} autoComplete="off" ref="div">{text}</p>
+            <p className="editable" autoFocus contentEditable={true} autoComplete="off" onKeyPress={this.onKeyPress.bind(this)} ref="div">{text}</p>
           </div>
           <div className="col s12 m3">
-            <button className="waves-effect waves-light btn" onClick={() => saveEdit(this.refs.div.innerText)}><i className="material-icons right">done</i>Save</button>
+            <button className="waves-effect waves-light btn" type="submit"><i className="material-icons right">done</i>Save</button>
             <button className="waves-effect waves-light btn" onClick={cancelEdit}><i className="material-icons right">close</i>Cancel</button>
           </div>
-        </div>
+        </form>
         <div className="divider"></div>
       </li>
     )

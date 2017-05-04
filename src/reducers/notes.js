@@ -19,7 +19,7 @@ let initialState = [
   }
 ]
 
-let counter = initialState.length;
+let counter = initialState.length || 0;
 
 const note = (state={}, action) => {
   switch (action.type){
@@ -45,8 +45,8 @@ const notes = (state=initialState, action) => {
   switch (action.type){
     case types.ADD_NOTE:
       return [
-        ...state,
-        note(undefined, action)
+        note(undefined, action),
+        ...state
       ]
     case types.DELETE_NOTE:
       return state.filter((item) => 
