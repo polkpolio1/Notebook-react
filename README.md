@@ -4,5 +4,4 @@ Notebook application
 * `npm install`
 * `npm start`
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-Designed by [Materializecss](http://materializecss.com/).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), styles - [Materialize css](http://materializecss.com/).

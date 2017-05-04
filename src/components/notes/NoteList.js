@@ -25,7 +25,7 @@ class NoteList extends React.Component {
     if(!inputValidate(text)){
       return
     }
-    
+
   	this.props.onEditClick(id, text)
   	this.cancelEdit()
   }
@@ -51,7 +51,8 @@ class NoteList extends React.Component {
                 onDeleteClick={onDeleteClick.bind(null, note.id)}
                 startEdit={this.startEdit.bind(this, note.id)}
                 {...note}
-              /> : <EditForm 
+              /> 
+            : <EditForm 
                 key={note.id} 
                 text={this.state.editableText}
                 saveEdit={this.saveEdit.bind(this, note.id)}

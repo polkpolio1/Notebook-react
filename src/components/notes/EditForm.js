@@ -13,8 +13,9 @@ class EditForm extends React.Component{
     el.focus()
   }
 
-  onSaveEdit(){
+  onSaveEdit(e){
     this.props.saveEdit(this.refs.div.innerText)
+    e.preventDefault()
   }
 
   onKeyPress(e){
@@ -22,12 +23,12 @@ class EditForm extends React.Component{
       this.onSaveEdit()
     }
   }
-  
+
   render(){
     const {text, cancelEdit} = this.props
     return (
       <li>
-        <form className="row"  autoComplete="off" onSubmit={this.onSaveEdit}>
+        <form className="row"  autoComplete="off" onSubmit={this.onSaveEdit.bind(this)}>
           <div className="col s12 m9">
             <p className="editable" autoFocus contentEditable={true} autoComplete="off" onKeyPress={this.onKeyPress.bind(this)} ref="div">{text}</p>
           </div>
