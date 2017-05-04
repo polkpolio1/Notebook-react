@@ -1,6 +1,7 @@
 import React from 'react'
 import Note from './Note'
 import EditForm from './EditForm'
+import { inputValidate } from '../../actions/noteActions'
 
 class NoteList extends React.Component {
   constructor(props){
@@ -20,15 +21,11 @@ class NoteList extends React.Component {
 
   saveEdit(id, text){
   	text = text.trim()
-  	if(text.length < 5) {
-      alert("Note must be more then 5 symbols!")
-      return
-    }
-    if(text.length >= 800){
-      alert("Note must be less then 300 symbols!")
-      return
-    }
 
+    if(!inputValidate(text)){
+      return
+    }
+    
   	this.props.onEditClick(id, text)
   	this.cancelEdit()
   }

@@ -1,21 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { addNote } from '../actions/noteActions'
+import { addNote, inputValidate } from '../actions/noteActions'
 
 let AddNoteContainer = ({ dispatch }) => {
   let input
 
   let onSubmitClick = (e) => {
     e.preventDefault()
-    if(input.value.trim().length < 5) {
-      alert("Note must be more then 5 symbols!")
+    let text = input.value.trim()
+
+    if(!inputValidate(text)){
       return
     }
-    if(input.value.trim().length >= 800){
-      alert("Note must be less then 300 symbols!")
-      return
-    }
-    dispatch(addNote(input.value))
+    
+    dispatch(addNote(text))
     input.value = ''
     // for animation back if submitted by 'enter'
     input.focus()

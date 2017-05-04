@@ -28,8 +28,14 @@ p{
 
 p.editable{
   padding: 10px;
+  outline: none;
+  border: 1px dotted #26a69a;
 }
 
 nav{
   margin-bottom: 20px;
+}
+
+.row .col.s12{
+  margin-bottom: 10px;
 }

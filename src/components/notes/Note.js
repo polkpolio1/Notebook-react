@@ -6,10 +6,10 @@ const Note = ({ text, onDeleteClick, startEdit }) => {
   return (
   	<li>
   	  <div  className="row">
-  	    <div className="col s9">
+  	    <div className="col s12 m9">
       	  <p ref={node => { input = node }}>{text}</p>
   	    </div>
-  	  	<div className="col s3">
+  	  	<div className="col s12 m3">
 	      <button className="waves-effect waves-light btn" onClick={onDeleteClick}><i className="material-icons right">delete</i> DELETE </button>
 	      <button className="waves-effect waves-light btn" onClick={() => startEdit(input.innerText)}><i className="material-icons right">edit</i> EDIT </button>
   	  	</div>
