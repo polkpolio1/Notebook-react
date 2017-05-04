@@ -13,10 +13,10 @@ class NoteList extends React.Component {
   }
 
   startEdit(id, text){
-  	this.setState({
-  	  editableId: id,
-  	  editableText: text
-  	})
+    this.setState({
+      editableId: id,
+      editableText: text
+    })
   }
 
   saveEdit(id, text){
@@ -26,27 +26,27 @@ class NoteList extends React.Component {
       return
     }
 
-  	this.props.onEditClick(id, text)
-  	this.cancelEdit()
+    this.props.onEditClick(id, text)
+    this.cancelEdit()
   }
 
   cancelEdit(){
-  	this.setState({
-  	  editableId: null,
-  	  editableText: null
-  	})
+    this.setState({
+      editableId: null,
+      editableText: null
+    })
   }
 
   render(){
-  	const { notes, onDeleteClick } = this.props
+    const { notes, onDeleteClick } = this.props
 
     return (
       <ul>
         {
           notes.map(note => {
-        	return (
-        	  this.state.editableId !== note.id 
-        	  ? <Note
+          return (
+            this.state.editableId !== note.id 
+            ? <Note
                 key={note.id}
                 onDeleteClick={onDeleteClick.bind(null, note.id)}
                 startEdit={this.startEdit.bind(this, note.id)}
@@ -60,7 +60,7 @@ class NoteList extends React.Component {
               /> 
             )
           })
-    	}
+      }
       </ul>
     )
   }
