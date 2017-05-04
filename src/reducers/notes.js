@@ -17,9 +17,9 @@ const note = (state={}, action) => {
         : Object.assign({}, state, {
             text: action.text
           })
+    default:
+      return state
   }
-
-  return state
 }
 
 const notes = (state=[], action) => {
@@ -37,9 +37,9 @@ const notes = (state=[], action) => {
       return state.map((item) => 
         note(item, action)
       )
+    default:
+      return state
   }
-
-  return state
 }
 
 export default notes
