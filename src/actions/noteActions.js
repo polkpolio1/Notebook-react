@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes'
 export const addNote = (text) => {
   return {
     type: types.ADD_NOTE,
-  	text
+    text
   }
 }
 
